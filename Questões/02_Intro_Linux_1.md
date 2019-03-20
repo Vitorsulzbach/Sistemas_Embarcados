@@ -31,3 +31,19 @@
   (r) Substituir ocorrências de palavras-chave em um arquivo-texto.
   (s) Conferir se dois arquivos são iguais.
   (t) Escrever algo na tela.
+
+Respostas:
+
+1. Unix foi o primeiro sistema operacional feito em C, com ótimo desempenho e programação mais rápida para a época, foi baseado no SO mais arrojado até então. O Linux foi a versão de Unix criado por Linus Torvalds, contado com o GNU para gerenciamento do computador e possuindo licença livre.
+
+2. Os Daemons são controladores de outros programas ou arquivos, que influenciam diretamente na eficiencia da máquina e multitasking.
+
+3. É o terminal GNU do Linux.
+
+4. Pois como super usuario é possível alterar permissões e configurações básicas do SO, o que pode levar a quebra do mesmo.
+
+5. Tab
+
+6. ↑
+
+7. 
