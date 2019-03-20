@@ -46,4 +46,44 @@ Respostas:
 
 6. ↑
 
-7. 
+7.
+
+(a) man
+
+(b) ls
+
+(c) pwd
+
+(d) cd
+
+(e) mkdir
+
+(f) rm
+
+(g) rmdir
+
+(h) cp
+
+(i) cp -R
+
+(j) mv
+
+(k) mv -t
+
+(l) mv
+
+(m) cat
+
+(n) ls
+
+(o) clear
+
+(p) find
+
+(q) grep
+
+(r) sort
+
+(s) cmp
+
+(t) echo
