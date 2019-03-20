@@ -25,3 +25,9 @@ Para as questões a seguir, use a pasta no endereço https://github.com/DiogoCae
 11. Liste somente os arquivos que contenham o nome 'tux'.
 
 12. Liste somente os arquivos que comecem com o nome 'tux'.
+
+Respostas:
+
+1. cat Ola_mundo.txt
+
+2. 
