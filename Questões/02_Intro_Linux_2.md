@@ -30,4 +30,33 @@ Respostas:
 
 1. cat Ola_mundo.txt
 
-2. 
+2. ls
+
+3. ls -l
+
+4. ls -l | grep '^d'
+
+5. cal 2009
+cal 2010
+cal 2011
+cal 2012
+cal 2013
+cal 2014
+cal 2015
+cal 2016
+cal 2017
+cal 2018
+
+6. ls -l | grep 'txt'
+
+7. ls -l | grep 'png'
+
+8. ls -l | grep 'jpg'
+
+9. ls -l | grep 'gif'
+
+10. ls -nr 'cal*'
+
+11. ls -nr 'tux*'
+
+12. ls -nr 'tux'
