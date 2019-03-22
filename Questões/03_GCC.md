@@ -76,7 +76,7 @@ $ echo Eu Mesmo | ./ola_usuario_2
 
 (e) Se é usado um pipe com mais de um nome entre aspas duplas. Por exemplo:
 ```bash
-$ echo Eu Mesmo | ./ola_usuario_2
+$ echo "Eu Mesmo" | ./ola_usuario_2
 ```
 
 (f) Se é usado o redirecionamento de arquivo. Por exemplo:
@@ -158,4 +158,34 @@ void main() {
 	printf("Olá %s\n", i);
 	
 }
+```
+3.
+(a)
+```
+Digite o seu nome: Eu mesmo
+Olá Eu
+```
+(b)
+```
+Digite o seu nome: "Eu mesmo"
+Olá "Eu
+
+```
+(c)
+```
+Digite o seu nome: Olá EU
+
+```
+(d)
+```
+Digite o seu nome: Olá eu
+```
+(e)
+```
+Digite o seu nome: Olá eu
+
+```
+(f)
+```
+Digite o seu nome: Olá Ola
 ```
