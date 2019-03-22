@@ -169,12 +169,10 @@ Olá Eu
 ```
 Digite o seu nome: "Eu mesmo"
 Olá "Eu
-
 ```
 (c)
 ```
 Digite o seu nome: Olá EU
-
 ```
 (d)
 ```
@@ -183,7 +181,6 @@ Digite o seu nome: Olá eu
 (e)
 ```
 Digite o seu nome: Olá eu
-
 ```
 (f)
 ```
