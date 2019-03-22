@@ -122,3 +122,30 @@ $ Total de caracteres de entrada: 25
 ```
 
 12. Crie um Makefile para a questão anterior.
+
+Respostas:
+
+1. 
+Código em C:
+```
+#import <stdio.h>
+
+void main() {
+
+	printf("Ola mundo!\n");
+}
+```
+Compilar no Shell:
+```
+gcc a.c
+```
+Executar:
+```
+./a.out
+```
+Saída:
+```
+Olá Mundo!
+```
+
+2.
