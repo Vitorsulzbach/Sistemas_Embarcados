@@ -70,3 +70,16 @@ for line in $(cat sites.txt); do
 ```
 
 5.
+Necessária deve-se utlizar a seguinte linha de código para rodar o script:
+```
+. ./up.sh
+```
+Código:
+```
+b=1
+a=1
+for i in $(seq $a $b $1); do
+	cd ..
+	echo "up $i"
+	done
+```
