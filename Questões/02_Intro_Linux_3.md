@@ -43,7 +43,7 @@ for i in {1..100..1}
 ```
 a=1
 str=" "
-for i in $*; do #$(seq $a $b $#); do
+for i in $*; do
 	str="$str $i"
 	if [ $a -eq 2 ]; then
 		cal $str
