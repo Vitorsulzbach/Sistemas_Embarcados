@@ -70,7 +70,7 @@ for line in $(cat sites.txt); do
 ```
 
 5.
-Necessária deve-se utlizar a seguinte linha de código para rodar o script(adicionando o parâmetro desejado):
+Necessária deve-se utlizar a seguinte linha de código para rodar o script (adicionando o parâmetro desejado):
 ```
 . ./up.sh
 ```
