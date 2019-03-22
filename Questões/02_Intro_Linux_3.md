@@ -40,13 +40,13 @@ for i in {1..100..1}
 2. a=1
 str=" "
 for i in $*; do #$(seq $a $b $#); do
-	str="$str $i"
+	str="$str $i";
 	if [ $a -eq 2 ]; then
-		cal $str
-		a=1
-		str=" "
+		cal $str;
+		a=1;
+		str=" ";
 	else
-		a=2
+		a=2;
 	fi
 	echo '---------------------------------'
 done
