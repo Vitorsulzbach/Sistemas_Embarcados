@@ -38,7 +38,8 @@ for i in {1..100..1}
 	done
 
 2.
-**a=1
+...
+a=1
 str=" "
 for i in $*; do #$(seq $a $b $#); do
 	str="$str $i"
@@ -50,4 +51,5 @@ for i in $*; do #$(seq $a $b $#); do
 		a=2
 	fi
 	echo '---------------------------------'
-done**
+done
+...
