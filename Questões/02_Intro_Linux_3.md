@@ -55,3 +55,11 @@ for i in $*; do #$(seq $a $b $#); do
 	echo '---------------------------------'
 done
 ```
+3.
+```
+for i in {2009..2019..1}; do
+	bash cals.sh 7 $i
+	done
+```
+
+4.
