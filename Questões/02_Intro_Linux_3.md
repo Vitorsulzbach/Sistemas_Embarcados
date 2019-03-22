@@ -63,3 +63,10 @@ for i in {2009..2019..1}; do
 ```
 
 4.
+```
+for line in $(cat sites.txt); do
+	wget $line
+	done
+```
+
+5.
