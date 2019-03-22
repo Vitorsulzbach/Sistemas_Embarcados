@@ -37,16 +37,17 @@ for i in {1..100..1}
 		echo "Número do arquivo = $i" > test$i.txt
 	done
 
-2. a=1
+2.
+**a=1
 str=" "
 for i in $*; do #$(seq $a $b $#); do
-	str="$str $i";
+	str="$str $i"
 	if [ $a -eq 2 ]; then
-		cal $str;
+		cal $str
 		a=1;
-		str=" ";
+		str=" "
 	else
-		a=2;
+		a=2
 	fi
 	echo '---------------------------------'
-done
+done**
