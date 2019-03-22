@@ -131,7 +131,7 @@ Código em C:
 #import <stdio.h>
 
 void main() {
-	printf("Ola mundo!\n");
+	printf("Olá mundo!\n");
 }
 ```
 Compilar no Shell:
@@ -148,3 +148,14 @@ Olá Mundo!
 ```
 
 2.
+```
+#include <stdio.h>
+
+void main() {
+	char i[100];
+	printf("Digite o seu nome: ");
+	scanf("%s", i);
+	printf("Olá %s\n", i);
+	
+}
+```
