@@ -74,7 +74,7 @@ Necessária deve-se utlizar a seguinte linha de código para rodar o script (adi
 ```
 . ./up.sh
 ```
-Código:
+O ponto adicional se faze necessário para que o código rode na shell atual.
 ```
 b=1
 a=1
