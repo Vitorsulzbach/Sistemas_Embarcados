@@ -32,10 +32,12 @@ Estes são links para slides de 3 aulas desta dsciplina, um para cada linha do a
 Respostas: 
 
 1.
+```
 for i in {1..100..1}
 	do
 		echo "Número do arquivo = $i" > test$i.txt
 	done
+```
 
 2.
 ```
