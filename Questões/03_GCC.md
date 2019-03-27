@@ -195,3 +195,76 @@ int main (int argc, char *argv[]) {
 	printf("Olá %s\n", argv[1]);
 }
 ```
+
+5. 
+(a)
+```
+./4 EU mesmo
+Olá EU
+```
+
+(b)
+```
+./4 "Eu mesmo"
+Olá Eu mesmo
+```
+
+(c)
+```
+echo Eu | ./4
+Olá (null)
+```
+
+(d)
+```
+echo Eu Mesmo | ./4
+Olá (null)
+```
+
+(e)
+```
+echo "Eu Mesmo" | ./4
+Olá (null)
+```
+
+(f)
+```
+./4 < ola.txt
+Olá (null)
+```
+
+6.
+```
+#include <stdio.h>
+
+int main (int argc, char *argv[]) {
+	printf("Olá %s\n", argv[1]);
+	printf("Número de Entradas = %i", argc);
+}
+```
+
+7.
+```
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+	printf("Argumentos =");
+	for(int i=1; i<argc; i++) {
+		printf(" %s",argv[i]);
+	}
+	printf("\n")
+}
+```
+
+8.
+```
+#include <stdio.h>
+#include <string.h>
+
+int Num_Caracs(char *string) {
+	int b = strlen(string);
+	return b;
+}
+```
+
+9.
