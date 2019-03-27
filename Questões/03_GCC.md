@@ -186,3 +186,12 @@ Digite o seu nome: Olá eu
 ```
 Digite o seu nome: Olá Ola
 ```
+
+4.
+```
+#include <stdio.h>
+
+int main (int argc, char *argv[]) {
+	printf("Olá %s\n", argv[1]);
+}
+```
