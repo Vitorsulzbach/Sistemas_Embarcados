@@ -60,5 +60,56 @@ int main(int argc, char *argv[]){
 
 2.
 ```
+#include <stdio.h>
+#include <string.h>
 
+int main(int argc, char *argv[]) {
+	char buffern[100];
+	char bufferi[100];
+	printf("Digite seu nome: ");
+	scanf("%s", buffern);
+	printf("Digite sua idade: ");
+	scanf("%s", bufferi);
+	FILE *pont_arq;
+	pont_arq = fopen("ola_mundo.txt", "w");
+	fwrite("nome: ", 1, strlen("nome: "), pont_arq);
+	fwrite(buffern, 1, strlen(buffern), pont_arq);
+	fwrite("\nidade: ", 1, strlen("\nidade: "), pont_arq);
+	fwrite(bufferi, 1, strlen(bufferi), pont_arq);
+}
 ```
+
+3.
+```
+#include <stdio.h>
+#include <string.h>
+
+int main(int argc, char *argv[]) {
+	FILE *pont_arq;
+	pont_arq = fopen("ola_mundo.txt", "w");
+	fwrite("nome: ", 1, strlen("nome: "), pont_arq);
+	fwrite(argv[1], 1, strlen(argv[1]), pont_arq);
+	fwrite("\nidade: ", 1, strlen("\nidade: "), pont_arq);
+	fwrite(argv[2], 1, strlen(argv[2]), pont_arq);
+}
+```
+
+4.
+```
+#include <stdio.h>
+#include <string.h>
+
+int main(int argc, char *argv[]) {
+	char a[] = "1.txt";
+	printf("%i\n", tam_arq_texto(a));
+}
+
+int tam_arq_texto(char *nome_arquivo){
+	FILE *arq = fopen(nome_arquivo, "r");
+	fseek(arq, 0, SEEK_END);
+	int size = ftell(arq);
+	return size;
+}
+```
+
+5. 
