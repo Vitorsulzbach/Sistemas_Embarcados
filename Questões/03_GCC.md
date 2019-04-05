@@ -267,4 +267,48 @@ int Num_Caracs(char *string) {
 }
 ```
 
-9.
+9 e 10.
+num_caracs.c :
+```
+#include <stdio.h>
+#include <string.h>
+#include "num_caracs.h"
+
+int Num_Caracs(char *string)
+{
+	int b = strlen(string);
+	return b;
+}
+```
+
+num_caracs.h :
+```
+int Num_Caracs(char *string);
+```
+
+main.c :
+```
+#include <stdio.h>
+#include <string.h>
+#include "num_caracs.h"
+
+int main(int argc, char **argv){
+	for(int i = 0;i<argc;i++) {
+		printf("Argumento %s", argv[i]);
+		printf(" Número de caracteres: %i\n", Num_Caracs(argv[i]));
+	}
+	return 0;
+}
+```
+
+Makefile :
+```
+num_caracs: main.o num_caracs.o
+	gcc $(CFLAGS) -o num_caracs main.o num_caracs.o
+main.o: main.c num_caracs.h
+	gcc $(CFLAGS) -c main.c
+num_caracs.o: num_caracs.c num_caracs.h
+	gcc $(CFLAGS) -c num_caracs.c
+clean:
+	rm -f *.o num_caracs
+```
