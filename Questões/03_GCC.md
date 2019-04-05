@@ -312,3 +312,19 @@ num_caracs.o: num_caracs.c num_caracs.h
 clean:
 	rm -f *.o num_caracs
 ```
+11 e 12.
+Trocando apenas o Main.c da questão anterior:
+```
+#include <stdio.h>
+#include <string.h>
+#include "num_caracs.h"
+
+int main(int argc, int **argv){
+	int a = 0;
+	for(int i = 0;i<argc;i++){
+		a+=Num_Caracs(argv[i]);
+	}
+	printf("%i\n",a);
+	return 0;
+}
+```
