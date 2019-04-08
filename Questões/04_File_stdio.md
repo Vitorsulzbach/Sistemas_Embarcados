@@ -96,14 +96,6 @@ int main(int argc, char *argv[]) {
 
 4.
 ```
-#include <stdio.h>
-#include <string.h>
-
-int main(int argc, char *argv[]) {
-	char a[] = "1.txt";
-	printf("%i\n", tam_arq_texto(a));
-}
-
 int tam_arq_texto(char *nome_arquivo){
 	FILE *arq = fopen(nome_arquivo, "r");
 	fseek(arq, 0, SEEK_END);
@@ -113,3 +105,55 @@ int tam_arq_texto(char *nome_arquivo){
 ```
 
 5. 
+```
+char* le_arq_texto(char *nome_arquivo){
+	FILE *arq = fopen(nome_arquivo, "r");
+	int long g = tam_arq_texto(nome_arquivo);
+	char *a;
+	a = malloc(g+3);
+	fread(a, 1, g, arq);
+	fclose(arq);
+	return a;
+}
+```
+
+6.
+```
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+char* le_arq_texto(char *nome_arquivo);
+int long tam_arq_texto(char *nome_arquivo);
+
+int main(int argc, char *argv[]) {
+	char *a;
+	a = le_arq_texto(argv[1]);
+	printf("%s", a);
+	free(a);
+	return 0;
+}
+
+int long tam_arq_texto(char *nome_arquivo){
+	FILE *arq = fopen(nome_arquivo, "r");
+	fseek(arq, 0, SEEK_END);
+	int long size = ftell(arq);
+	fclose(arq);
+	return size;
+}
+
+char* le_arq_texto(char *nome_arquivo){
+	FILE *arq = fopen(nome_arquivo, "r");
+	int long g = tam_arq_texto(nome_arquivo);
+	char *a;
+	a = malloc(g+3);
+	fread(a, 1, g, arq);
+	fclose(arq);
+	return a;
+}
+```
+
+7.
+```
+
+```
