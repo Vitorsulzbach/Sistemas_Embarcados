@@ -155,5 +155,35 @@ char* le_arq_texto(char *nome_arquivo){
 
 7.
 ```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+int long tam_arq_texto(char *nome_arquivo);
+
+int main(int argc, char *argv[]){
+	FILE *fp = fopen(argv[2], "r");
+	char buffer[100] = "";
+	int a = 0;
+	printf("-%s-\n", argv[1]);
+	int long n = (tam_arq_texto(argv[2])-1);
+	while(ftell(fp)<n){
+		fscanf(fp, "%s", buffer);
+		printf("-%s-\n", buffer);
+		if(strcmp(buffer,argv[1])==0) {
+			a++;
+		}
+	}
+	printf("%i\n",a);
+	fclose(fp);
+	return 0;
+}
+
+int long tam_arq_texto(char *nome_arquivo){
+	FILE *arq = fopen(nome_arquivo, "r");
+	fseek(arq, 0, SEEK_END);
+	int long size = ftell(arq);
+	fclose(arq);
+	return size;
+}
 ```
