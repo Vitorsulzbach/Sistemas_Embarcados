@@ -58,3 +58,32 @@ int fseek (FILE *fp, long numbytes, int origem);
 
 void rewind(FILE *stream);
 ```
+
+(e) stdio.h
+
+2. É uma interface de sistema operacional que tem por objetivo dar compatibilidade as aplicações feitas para unix.
+
+3. 
+(a) open e close
+```
+ int open (const char *filename, int flags[, mode_t mode]);
+ 
+ int close (int filedes);
+ ```
+ 
+ (b) write
+ ```
+ ssize_t write(int fildes, const void *buf, size_t nbyte);
+ ```
+ 
+ (c) read
+ ```
+ ssize_t read(int fildes, void *buf, size_t nbyte);
+ ```
+ 
+ (d) lseek
+ ```
+ off_t lseek(int fd, off_t offset, int whence);
+ ```
+ 
+ (e) unistd.h
