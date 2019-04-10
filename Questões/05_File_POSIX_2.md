@@ -128,3 +128,35 @@ int tam_arq_texto(char *nome_arquivo){
 	return i;
 }
 ```
+
+5.
+```
+char* le_arq_texto(char *nome_arquivo){
+	int fp2 = open(nome_arquivo, O_RDONLY | O_CREAT, S_IRWXU);
+	int a = tam_arq_texto(nome_arquivo);
+	char *buffer = malloc(a);
+	ssize_t b = read(fp2, buffer, a);
+	close(fp2);
+	return buffer;	
+}
+```
+
+6.
+Utilizando os objetos das questões 4 e 5:
+```
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include "bib_arqs.h"
+
+int main(int argc, char **argv) {
+	printf("%s", le_arq_texto(argv[1]));
+}
+```
+
+7.
+```
+
+```
