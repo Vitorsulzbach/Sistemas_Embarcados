@@ -41,3 +41,90 @@ $ echo Ola mundo cruel! Ola universo ingrato! > ola.txt
 $ ./busca_e_conta Ola ola.txt
 $ 'Ola' ocorre 2 vezes no arquivo 'ola.txt'.
 ```
+
+Respostas:
+
+1.
+```
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+int main(int argc, const char * argv[])
+{
+	int fp, i;
+	char string[100]="hello world!";
+
+	fp = open ("2.txt", O_WRONLY | O_CREAT);
+	write(fp, &(string[i]), sizeof(string));
+	write(fp, "\n", 1);
+	close(fp);
+
+	return 0;
+}
+```
+
+2.
+```
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(int argc, const char * argv[])
+{
+	int fp, i;
+	char string[100];
+	char string1[100];
+	char string2[] = "Nome: ";
+	char string3[] = "\nIdade: ";
+	printf("Digite o seu nome: ");
+	scanf("%s",string);
+	printf("Digite a sua idade: ");
+	scanf("%s",string1);
+	fp = open ("2.txt", O_WRONLY | O_CREAT, S_IRWXU);
+	write(fp, &(string2), strlen(string2));
+	write(fp, &(string), strlen(string));
+	write(fp, &(string3), strlen(string3));
+	write(fp, &(string1), strlen(string1));
+	write(fp, "\n", 1);
+	close(fp);
+
+	return 0;
+}
+```
+
+3.
+```
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(int argc, const char * argv[]){
+	int fp, i;
+	char string2[] = "Nome: ";
+	char string3[] = "\nIdade: ";
+	fp = open ("3.txt", O_WRONLY | O_CREAT, S_IRWXU);
+	write(fp, &(string2), strlen(string2));
+	write(fp, argv[1], strlen(argv[1]));
+	write(fp, &(string3), strlen(string3));
+	write(fp, argv[2], strlen(argv[2]));
+	write(fp, "\n", 1);
+	close(fp);
+	return 0;
+}
+```
+
+4.
+```
+int tam_arq_texto(char *nome_arquivo){
+	int fp1 = open(nome_arquivo, O_WRONLY | O_CREAT, S_IRWXU);
+	int i = lseek(fp1, 0, SEEK_END);
+	close(fp1);
+	return i;
+}
+```
