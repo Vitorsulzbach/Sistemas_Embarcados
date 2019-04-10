@@ -20,7 +20,7 @@ pipe(fd);
 
 3. Considere o código a seguir:
 
-```
+```C
 #include <signal.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -43,3 +43,17 @@ int main()
 ```
 
 Sabendo que a função `alarm()` tem como entrada a quantidade de segundos para terminar a contagem, quão precisos são os alarmes criados neste código? De onde vem a imprecisão? Este é um método confiável para desenvolver aplicações em tempo real?
+
+1.
+(a) 1 pipe
+
+(b)	2, 1 pipe para cada processo
+
+2. 
+SIGKILL: mata o processo
+SIGBUS: indica erro de barramento
+SIGILL: indica intrução ilegal
+SIGSYS: argumento errado em chamada de sistema
+SIGCLD: morte de um processo filho
+
+3. O sinal alarm é em segundos, uma unidade longa para certos processos, além de poder ser interceptada.
