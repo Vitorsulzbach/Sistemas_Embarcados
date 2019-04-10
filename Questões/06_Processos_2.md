@@ -74,7 +74,93 @@ int main(int argc, char *argv[]){
 
 3.
 ```
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
+int main(int argc, char *argv[]){
+	for(int i = 1;i<argc;i++) {
+		char* list[] = { argv[i], NULL };
+		if(i>1) {
+			printf("\n---------------------------------------------------------\n");
+		} else {
+			printf("\n");
+		}
+		pid_t child = fork();
+		if(child==0){
+			execvp(argv[i],list);
+			printf("Deu erro!\n");
+			return -1;
+		} else {
+			wait(NULL);
+		}
+	}
+	return 0;
+}
 ```
 
 4.
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+void Incrementa_Variavel_Global(pid_t id_atual);
+
+int v_global = 0; // Variavel global para este exemplo
+
+int main(int argc, char *argv[]){
+	for(int i=0;i<3;i++){
+		pid_t child = fork();
+		if(child==0){
+			Incrementa_Variavel_Global(getpid());
+			return -1;
+		} else {
+			wait(NULL);
+		}
+	}
+	return 0;
+}
+
+void Incrementa_Variavel_Global(pid_t id_atual) {
+	v_global++;
+	printf("ID do processo que executou esta funcao = %d\n", id_atual);
+	printf("v_global = %d\n", v_global);
+}
+```
+
+5.
+Os filhos geram uma cópia da váriavel que o pai criou e incrementavam ela porem esta incrementação não afeta o pai e consequentemente não é herdada pelo irmãos, a diferença é que o responsavel pela incrementação é o pai no segundo caso.
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+void Incrementa_Variavel_Global(pid_t id_atual);
+
+int v_global = 0; // Variavel global para este exemplo
+
+int main(int argc, char *argv[]){
+	for(int i=0;i<3;i++){
+		pid_t child = fork();
+		if(child==0){
+			Incrementa_Variavel_Global(getpid());
+			return -1;
+		} else {
+			wait(NULL);
+		Incrementa_Variavel_Global(getpid());
+		}
+	}
+	return 0;
+}
+
+void Incrementa_Variavel_Global(pid_t id_atual) {
+	v_global++;
+	printf("ID do processo que executou esta funcao = %d\n", id_atual);
+	printf("v_global = %d\n", v_global);
+}
+```
