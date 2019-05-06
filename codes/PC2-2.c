@@ -57,28 +57,28 @@ void loop(){
 }
 
 int* set_data(int *data){
-	printf("Digite o mês para despertar: ");
+	printf("Digite o mÃªs para despertar: ");
 	scanf("%d", &data[0]);
 	while(data[0]>12) {
-		printf("Digite um mês válido: ");
+		printf("Digite um mÃªs vÃ¡lido: ");
 		scanf("%d", &data[0]);
 	}
 	printf("Digite o dia para despertar: ");
 	scanf("%d", &data[1]);
 	while(data[1]>31) {
-		printf("Digite um dia válido: ");
+		printf("Digite um dia vÃ¡lido: ");
 		scanf("%d", &data[1]);
 	}
 	printf("Digite a hora para despertar: ");
 	scanf("%d", &data[2]);
 	while(data[2]>24) {
-		printf("Digite uma hora válida: ");
+		printf("Digite uma hora vÃ¡lida: ");
 		scanf("%d", &data[2]);
 	}
 	printf("Digite o minuto para despertar: ");
 	scanf("%d", &data[3]);
 	while(data[3]>60) {
-		printf("Digite um minuto válido: ");
+		printf("Digite um minuto vÃ¡lido: ");
 		scanf("%d", &data[3]);
 	}
 	return data;
