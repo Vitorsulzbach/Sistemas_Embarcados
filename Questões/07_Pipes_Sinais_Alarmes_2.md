@@ -70,3 +70,49 @@ int main(int argc, char *argv[]) {
 	exit(1);
 }
 ```
+
+2. 
+```C
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <string.h>
+
+int main(int argc, char *argv[]) {
+	int fd[2];
+	int fd2[2];
+	int pid;
+	char mensagem[100]= "";
+	pipe(fd);
+	pipe(fd2);
+	pid = fork();
+	int i;
+	if(pid==0) {
+		sprintf(mensagem, "Pai, qual é a verdadeira essência da sabedoria?");
+		write(fd2[1],mensagem,100);
+		usleep(2000);
+		read(fd[0],mensagem,100);
+		printf("%s: Recebido\n", mensagem);
+		sprintf(mensagem, "Mas até uma criança de três anos sabe disso!");
+		write(fd2[1],mensagem,100);
+		usleep(2000);
+		read(fd[0],mensagem,100);
+		printf("%s: Recebido\n", mensagem);
+	} else {
+		usleep(2000);
+		read(fd2[0],mensagem,100);
+		printf("%s: Recebido\n", mensagem);
+		sprintf(mensagem, "Não façais nada violento, praticai somente aquilo que é justo e equilibrado.");
+		write(fd[1],mensagem,100);
+		usleep(2000);
+		read(fd2[0],mensagem,100);
+		printf("%s: Recebido\n", mensagem);
+		sprintf(mensagem, "Sim, mas é uma coisa difícil de ser praticada até mesmo por um velho como eu...");
+		write(fd[1],mensagem,100);
+	}
+	exit(1);
+}
+```
