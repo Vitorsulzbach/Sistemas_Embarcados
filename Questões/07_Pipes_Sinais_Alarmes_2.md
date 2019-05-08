@@ -24,3 +24,49 @@ Neste exercício, quem recebe a mensagem via pipe é quem as escreve no terminal
 4. Crie um programa em C que cria um processo-filho e um pipe de comunicação. O processo-filho deverá pedir o nome do usuário, envia-lo para o pai via pipe, e o pai deverá escrever o nome do usuário no terminal.
 
 5. Utilize o sinal de alarme para chamar a cada segundo o comando `ps` ordenando todos os processos de acordo com o uso da CPU. Ou seja, seu código atualizará a lista de processos a cada segundo. Além disso, o código deverá tratar o sinal do CTRL-C, escrevendo "Processo terminado!" na tela antes de terminar a execução do processo.
+
+Respostas;
+
+1.
+```C
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <string.h>
+
+int main(int argc, char *argv[]) {
+	int fd[2];
+	int pid;
+	char mensagem[4]= "";
+	pipe(fd);
+	pid = fork();
+	int i;
+	if(pid==0) {
+		usleep(200);
+		for(i=1;i<11;i++){
+			if(i<10) {
+				read(fd[0],mensagem,1);
+			} else {
+				read(fd[0],mensagem,2);
+			}
+			printf("%s\n", mensagem);
+			sleep(1);
+		}
+		
+	} else {
+		for(i=1;i<11;i++){
+			sprintf(mensagem,"%i", i);
+			if(i<10) {
+				write(fd[1],mensagem,1);
+			} else {
+				write(fd[1],mensagem,2);
+			}
+			sleep(1);
+		}
+	}
+	exit(1);
+}
+```
