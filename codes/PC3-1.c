@@ -1,4 +1,3 @@
-```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -180,5 +179,3 @@ void troca_led(int signum){
 	digitalWrite(a,HIGH);
 	ualarm(t,0);
 }
-
-```
